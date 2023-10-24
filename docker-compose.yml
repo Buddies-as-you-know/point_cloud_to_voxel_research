@@ -1,0 +1,9 @@
+version: '3'
+services:
+  experiment:
+    environment:
+      TZ: Asia/Tokyo
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: ["poetry", "run", "python", "src/main.py"]
