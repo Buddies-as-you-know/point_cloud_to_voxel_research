@@ -19,6 +19,7 @@ class Config:
 
     bin_size: float = 0.5
     threshold: int = 10  # Adjust this value based on your requirement
+    voxel_size: int = 1
     path: str = os.getcwd() + "/data/raw/_point_cloud.ply"
 
     def __post_init__(self) -> None:
@@ -38,6 +39,11 @@ class Config:
 
         if self.threshold <= 0:
             message = "threshold must be positive."
+            logger.error(message)
+            raise ValueError(message)
+
+        if self.voxel_size <= 0:
+            message = "voxel_size must be positive."
             logger.error(message)
             raise ValueError(message)
 
