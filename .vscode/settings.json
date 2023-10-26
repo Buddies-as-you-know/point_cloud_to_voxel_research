@@ -4,7 +4,6 @@
         "editor.tabSize": 4,
         // ファイル保存時にフォーマット
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
 
     },
     // tests ディレクトリから src ディレクトリのモジュールをインポートするときの vscode 上でモジュールが見つからないエラー防止

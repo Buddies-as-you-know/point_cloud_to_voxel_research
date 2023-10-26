@@ -63,6 +63,7 @@ def voxelize_point_cloud(
     voxel_grid = o3d.geometry.VoxelGrid.create_from_point_cloud(
         pcd, voxel_size=voxel_size
     )
+    o3d.visualization.draw_geometries([voxel_grid])
     o3d.io.write_voxel_grid(f"{save_dir}/voxel.ply", voxel_grid)
     # 新しいファイルにボクセルグリッドを保存
     return voxel_grid  # 必要に応じてボクセルグリッドを返すか、他の操作を行う
