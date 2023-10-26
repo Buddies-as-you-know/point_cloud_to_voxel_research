@@ -21,3 +21,4 @@ https://tech-blog.abeja.asia/entry/container-enironment-202310
 #　問題点
 
 - [ ] ボクセル化したあとの保存方法問題
+- [ ] 
