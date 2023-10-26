@@ -12,7 +12,7 @@ https://tech-blog.abeja.asia/entry/container-enironment-202310
 
 
 # やること
-- [ ] ハードコーディング解消
+- [x] ハードコーディング解消
 - [ ] 点群をボクセル化してボクセル一つを大きくする。
 - [ ] ボクセルの保存方法を模索
 - [ ] unreal engineへの追加

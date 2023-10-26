@@ -1,0 +1,3 @@
+bin_size:  0.5
+threshold: 10  # Adjust this value based on your requirement
+path:  "/home/iplslam/research_point_cloud/python_research_enviroment/data/raw/_point_cloud.ply"

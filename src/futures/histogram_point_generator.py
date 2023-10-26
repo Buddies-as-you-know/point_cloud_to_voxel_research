@@ -2,7 +2,7 @@
 import math
 import os
 from collections import defaultdict
-from typing import DefaultDict, Dict, List, Tuple
+from typing import DefaultDict, Dict, List, Tuple, Union
 
 # Third Party Library
 import open3d as o3d
@@ -64,13 +64,32 @@ def voxelize_point_cloud(
     voxel_grid = o3d.geometry.VoxelGrid.create_from_point_cloud(
         pcd, voxel_size=voxel_size
     )
-    o3d.visualization.draw_geometries([voxel_grid])
     # 新しいファイルにボクセルグリッドを保存
     return voxel_grid  # 必要に応じてボクセルグリッドを返すか、他の操作を行う
 
 
+def save_voxel_grid_to_ply(
+    voxel_grid: o3d.geometry.VoxelGrid, file_path: str, binary: bool = True
+) -> None:
+    """
+    Save the voxel grid to a .ply file.
+
+    Args:
+    voxel_grid (o3d.geometry.VoxelGrid): The voxel grid to be saved.
+    file_path (str): The path of the file where the data will be saved.
+    binary (bool): Whether to save the file in binary format. Defaults to True.
+    """
+
+    # .ply形式でボクセルグリッドを保存する。binaryパラメータは、ファイルをバイナリ形式で保存するかどうかを制御する。
+    voxel_grid.save(file_path, write_ascii=not binary)
+
+
 def process_point_cloud(
-    ply_file_path: str, threshold: int, bin_size: float
+    ply_file_path: str,
+    threshold: int,
+    bin_size: float,
+    voxel_size: int,
+    save_dir: str,
 ) -> None:
     vertices = read_ply_file(ply_file_path)
     histogram_xz, histogram_yz = create_histogram(vertices, bin_size)
@@ -81,11 +100,8 @@ def process_point_cloud(
     )
     pcd = o3d.geometry.PointCloud()
     pcd.points = o3d.utility.Vector3dVector(new_vertices)
-    pwd = os.getcwd()
-    o3d.io.write_point_cloud(
-        pwd + "/point_cloud_data/new_point_cloud.ply", pcd
-    )
-    voxelize_point_cloud(pcd, 5)  # todo: ハードコーディング解消
+    vxl = voxelize_point_cloud(pcd, voxel_size)
+    save_voxel_grid_to_ply(vxl, save_dir)
 
 
 if __name__ == "__main__":
