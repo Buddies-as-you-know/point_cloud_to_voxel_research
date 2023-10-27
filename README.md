@@ -19,4 +19,6 @@
   - https://tecsingularity.com/open3d/bpa/
   - https://tecsingularity.com/open3d/normalestimation/
   - [meshlabでのマーチングキューブアルゴリズム](https://www.rccm.co.jp/icem/pukiwiki/index.php?%E7%82%B9%E7%BE%A4%E3%81%8B%E3%82%89%E3%83%9E%E3%83%BC%E3%83%81%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96%E3%82%B9%28APSS%29%E3%81%A7%E9%9D%A2%E3%82%92%E4%BD%9C%E6%88%90%28MeshLab%29)
+  - blender https://twitter.com/tarava777/status/1019872653732032512
+    - https://blenderartists.org/t/a-script-to-skin-a-point-cloud-for-blender-2-6x-or-later/529168
 # 参考文献
