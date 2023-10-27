@@ -11,7 +11,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
+python = ">=3.10,<=3.11"
 numpy = "^1.26.1"
 scipy = "^1.11.3"
 open3d = "^0.17.0"
@@ -24,6 +24,7 @@ pillow = "^10.1.0"
 pandas = "^2.1.1"
 tqdm = "^4.66.1"
 pytest = "^7.4.3"
+aspose-3d = "^23.9.1"
 
 
 [tool.poetry.group.dev.dependencies]
